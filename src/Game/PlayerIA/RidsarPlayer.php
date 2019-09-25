@@ -43,21 +43,21 @@ class RidsarPlayer extends Player
         
         
         if ($this->result->getLastChoiceFor($this->mySide)) {
-          //Check the last choice of the opponent
+          //Check the last choice of the opponent to know if they will change the strategy
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::scissorsChoice()) {
-            //Return depending on the oppopent choice
+            //Return the winning choice (rock > scissors)
             return parent::rockChoice();
           }
 
-          //Check the last choice of the opponent
+          //Check the last choice of the opponent to know if they will change the strategy
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::rockChoice()) {
-            //Return depending on the oppopent choice
+            //Return the winning choice (paper > rock)
             return parent::paperChoice();
           }
 
-          //Check the last choice of the opponent
+          //Check the last choice of the opponent to know if they will change the strategy
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::paperChoice()) {
-            //Return depending on the oppopent choice
+            //Return the winning choice (scissors > paper)
             return parent::scissorsChoice();
           }
         }
