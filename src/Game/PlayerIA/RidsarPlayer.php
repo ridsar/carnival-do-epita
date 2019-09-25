@@ -63,6 +63,7 @@ class RidsarPlayer extends Player
         }
         
         else {
+          //First round is rondom to maximize the win
           $randvalue = random_int(0, 2);
           if ($randvalue == 0) {
             return parent::paperChoice();
