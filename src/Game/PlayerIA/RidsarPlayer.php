@@ -41,14 +41,23 @@ class RidsarPlayer extends Player
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
         
+        
         if ($this->result->getLastChoiceFor($this->mySide)) {
+          //Check the last choice of the opponent
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::scissorsChoice()) {
+            //Return depending on the oppopent choice
             return parent::rockChoice();
           }
+
+          //Check the last choice of the opponent
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::rockChoice()) {
+            //Return depending on the oppopent choice
             return parent::paperChoice();
           }
+
+          //Check the last choice of the opponent
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::paperChoice()) {
+            //Return depending on the oppopent choice
             return parent::scissorsChoice();
           }
         }
