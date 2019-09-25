@@ -46,10 +46,10 @@ class RidsarPlayer extends Player
             return parent::rockChoice();
           }
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::rockChoice()){
-            return parent::scissorsChoice();
+            return parent::paperChoice();
           }
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::paperChoice()){
-            return parent::paperChoice();
+            return parent::scissorsChoice();
           }
         }
         
