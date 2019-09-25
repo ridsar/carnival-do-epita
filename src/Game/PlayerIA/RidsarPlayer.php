@@ -43,12 +43,45 @@ class RidsarPlayer extends Player
         
         if ($this->result->getLastChoiceFor($this->mySide)) {
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::scissorsChoice()) {
+            if ($this->result->getLastScoreFor($this->opponentSide) == 0) {
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::scissorsChoice()) {
+                return parent::rockChoice();
+              }
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::rockChoice()) {
+                return parent::paperChoice();
+              }
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::paperChoice()) {
+                return parent::scissorsChoice();
+              }
+            }
             return parent::rockChoice();
           }
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::rockChoice()){
+            if ($this->result->getLastScoreFor($this->opponentSide) == 0) {
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::scissorsChoice()) {
+                return parent::rockChoice();
+              }
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::rockChoice()) {
+                return parent::paperChoice();
+              }
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::paperChoice()) {
+                return parent::scissorsChoice();
+              }
+            }
             return parent::paperChoice();
           }
           if ($this->result->getLastChoiceFor($this->opponentSide) == parent::paperChoice()){
+            if ($this->result->getLastScoreFor($this->opponentSide) == 0) {
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::scissorsChoice()) {
+                return parent::rockChoice();
+              }
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::rockChoice()) {
+                return parent::paperChoice();
+              }
+              if ($this->result->getLastChoiceFor($this->opponentSide) == parent::paperChoice()) {
+                return parent::scissorsChoice();
+              }
+            }
             return parent::scissorsChoice();
           }
         }
