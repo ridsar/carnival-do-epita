@@ -62,7 +62,18 @@ class RidsarPlayer extends Player
           }
         }
         
-
-        return parent::paperChoice();            
+        else {
+          $randvalue = random_int(0, 2);
+          if ($randvalue == 0) {
+            return parent::paperChoice();
+          }
+          elseif ($randvalue == 1) {
+            return parent::rockChoice();
+          }
+          else {
+            return parent::scissorsChoice();
+          }
+        }
+                    
   }
 };
